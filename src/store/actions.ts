@@ -22,6 +22,9 @@ import {                        // 导入应用状态类型、操作类型及常
 import cornerstoneWADOImageLoader from 'cornerstone-wado-image-loader';
 import dicomParser from 'dicom-parser';
 
+// 定义后端的公网基础地址
+const API_BASE_URL = 'https://8684-210-30-193-102.ngrok-free.app';
+
 /**
  * 上传多个图像文件的Thunk Action
  * @param files - 用户选择的File对象数组
@@ -90,7 +93,7 @@ export const detectNodules =
         formData.append('file', activeImage.file);
 
         console.log(`开始检测结节 for image: ${activeImage.id}`);
-        const response = await axios.post('/api/predict', formData, {
+        const response = await axios.post(`${API_BASE_URL}/api/predict`, formData, {
           headers: { 'Content-Type': 'multipart/form-data' },
         });
         const nodules = response.data.nodules;
