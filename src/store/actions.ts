@@ -23,7 +23,7 @@ import cornerstoneWADOImageLoader from 'cornerstone-wado-image-loader';
 import dicomParser from 'dicom-parser';
 
 // 定义后端的公网基础地址
-const API_BASE_URL = 'https://8684-210-30-193-102.ngrok-free.app';
+const API_BASE_URL = 'easily-emerging-tarpon.ngrok-free.app';
 
 /**
  * 上传多个图像文件的Thunk Action
