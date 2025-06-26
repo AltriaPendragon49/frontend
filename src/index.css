@@ -1,0 +1,125 @@
+:root {
+  font-family: 'Roboto Mono', 'Consolas', 'Menlo', 'system-ui', Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Industrial black-gray color scheme */
+  --main-bg-color: #181a1b;         /* 黑灰主背景 */
+  --panel-bg-color: #232526;        /* 黑灰面板 */
+  --text-color: #e0e6ed;            /* 更亮的工业灰白 */
+  --accent-color: #64ffda;          /* 亮青色/绿松石色 */
+  --accent-color-darker: #00bfa5;   /* 深一点的青色 */
+  --border-color: #35393b;          /* 更分明的边框色 */
+  --shadow-color: rgba(100, 255, 218, 0.18); /* 更强的阴影 */
+  --card-radius: 12px;
+  --card-shadow: 0 4px 24px #000c, 0 1.5px 0 var(--border-color);
+
+  color-scheme: dark;
+  color: var(--text-color);
+  background-color: var(--main-bg-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: var(--accent-color);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--accent-color-darker);
+}
+
+body {
+  margin: 0;
+  /* 使应用在横向上占满可视区域，避免左右留白 */
+  width: 100vw;
+  min-width: 320px;
+  min-height: 100vh;
+  /* 允许子元素自行决定布局，无需整体居中 */
+  display: block;
+  background: var(--main-bg-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--accent-color);
+  font-family: 'Roboto Mono', 'Consolas', 'Menlo', monospace;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+button {
+  border-radius: 8px;
+  border: 2px solid var(--border-color);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: 'Roboto Mono', 'Consolas', 'Menlo', monospace;
+  background-color: var(--panel-bg-color);
+  color: var(--accent-color);
+  box-shadow: 0 2px 8px #0008;
+  transition: all 0.18s;
+}
+button:hover {
+  border-color: var(--accent-color);
+  background: #16202a;
+  color: #fff;
+  box-shadow: 0 0 16px var(--shadow-color);
+}
+button:focus,
+button:focus-visible {
+  outline: 3px solid var(--accent-color);
+}
+
+/* 让 React 根节点宽度 100% ，避免父级更改导致的水平留白 */
+#root {
+  width: 100vw;
+  height: 100vh;
+  background: var(--main-bg-color);
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden; /* 禁止全局滚动 */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.card, .panel, .main-layout > div {
+  background: var(--panel-bg-color) !important;
+  border: 2px solid var(--border-color) !important;
+  border-radius: var(--card-radius) !important;
+  box-shadow: var(--card-shadow) !important;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid var(--border-color);
+  margin: 12px 0;
+}
+
+input, select, textarea {
+  background: #181f26;
+  color: var(--text-color);
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: 'Roboto Mono', 'Consolas', 'Menlo', monospace;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #181f26;
+}
+::-webkit-scrollbar-thumb {
+  background: #2d3a4a;
+  border-radius: 6px;
+}
